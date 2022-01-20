@@ -1,0 +1,42 @@
+environment:
+  type: local
+  
+spring:
+  application:
+    name: My Spring Boot Application
+  datasource: 
+    url: jdbc:h2:file:C:/h2database/sample
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+    hikari:
+      minimumIdle: 5
+      maximumPoolSize: 20
+      idleTimeout: 30000
+      poolName: SpringBootJPAHikariCP
+      maxLifetime: 2000000
+      connectionTimeout: 30000 
+      
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+      naming: 
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  h2: 
+    console:
+      enabled: true    
+server: 
+  port: 8081
+  
+xMattersAlert:
+  url:
+  key:
+  type:
+  version:
+  object:
+  severity:
+  env:
+  
